@@ -1,0 +1,31 @@
+body {
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #444444;
+  font-family: roboto, Arial, Helvetica, Tahoma, Calibri, Verdana, sans-serif;
+}
+.content {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+.new-code {
+  color: red;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 5px;
+}
+h1 {
+  text-align: center;
+}
+p {
+  margin-top: 0px;
+}
+span.code {
+    background: lightgrey;
+}

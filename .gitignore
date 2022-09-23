@@ -1,0 +1,6 @@
+*.swp
+_build/
+_static/
+_templates/
+Makefile
+conf.py
