@@ -66,6 +66,7 @@ https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain
 - Tags can be added for organization of resources.
 - Click Create identity
 - CNAME records get added to the domain's Route 53 DNS record
+- If domain is not hosted by Route 53 you have to update the domain's DNS records where they are hosted.
 
 I went through this procedure with the wrong region selected at the top of the page. So, I deleted the Domain identity and redid it correctly. I do not think the CNAME records added in the first attempt were removed. I removed the old records from the DNS record. They could be identified as they were the CNAME records not in the SES -> Verified identity -> DKIM section for the domain. 
 
