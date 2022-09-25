@@ -4,7 +4,7 @@
 </head>
 <body>
   <div class="content">
-    <nav><a href="/code-examples/">HOME</a></nav>
+    <nav><a href="https://stevespages.org.uk/codenotes/codeexamples/">HOME</a></nav>
     <h1>Feet From the Shed</h1>
     <h2>Explanation</h2>
     <p>Here we display the position of the device with the position of the shed subtracted from it. The position of the shed was determined by standing outside the front door with my Android phone and by visiting stevespages.org.uk/code-examples/geolocation</p>

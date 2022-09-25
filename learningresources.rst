@@ -7,10 +7,16 @@ Computer Admin
 CSS
 ---
 
+A very good tutorial for dropdowns using CSS without JavaScript is at https://stevespages.org.uk/codenotes/codeexamples/nav/dotted-squirrel/
+
 Git
 ---
 
+https://git-scm.com/ has documentation for git including the man pages and the Pro Git book written by Scott Chacon and Ben Straub.
+
 https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-use-the-git-log-graph-command
+
+I ammended a commit that I had pushed to github because their was a typo in the commit message. I could not then push the ammended commit to github. In order to do so I had to `git merge origin/main`. This is explained here: https://www.koskila.net/how-to-git-merge-upstream/
 
 GitHub
 ------
@@ -56,6 +62,15 @@ Sphinx
 
 SQL
 ---
+
+Database Design for Mere Mortals by Michael Hernandez is a classic.
+
+SQLite
+......
+
+https://www.sqlite.org/
+
+For a good SQLite tutorial, including using the PHP interface, see https://www.sqlitetutorial.net/
 
 SVG
 ---

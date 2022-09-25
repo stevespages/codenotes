@@ -1,0 +1,316 @@
+<?php require $_SERVER['DOCUMENT_ROOT'].'/code-examples/head.php'; ?>
+<title>Flex</title>
+</head>
+<style>
+  /***** General Styles ******************************************************/
+  .new-code {
+    color: red
+  }
+  /***** End of General Styles ***********************************************/
+  /***** One *****************************************************************/
+  #nav-1 #hamburger-button {
+    display: none;
+  }
+  #nav-1 .top-level-list {
+    display: flex;
+  }
+  /***** End of One **********************************************************/
+  /***** Two *****************************************************************/
+  #nav-2 #hamburger-button {
+    display: none;
+  }
+  #nav-2 .top-level-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  /***** End of Two **********************************************************/
+  /***** Three ***************************************************************/
+  #nav-3 #hamburger-button {
+    display: none;
+  }
+  #nav-3 .top-level-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #nav-3 .top-level-list ul {
+    display: none;
+  }
+  #nav-3 .top-level-list li:focus-within ul {
+    display: block;
+  }
+  /***** End of Three *********************************************************/
+  /***** Four *****************************************************************/
+  #nav-4 #hamburger-button {
+    display: none;
+  }
+  #nav-4 .top-level-list {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #nav-4 .top-level-list ul {
+    display: none;
+    position: absolute;
+    background-color: lightgrey;
+  }
+  #nav-4 .top-level-list li:focus-within ul {
+    display: block;
+  }
+  /***** End of Four **********************************************************/
+</style>
+<body>
+  <div class="content">
+    <nav><a href="https://stevespages.org.uk/codenotes/codeexamples/">HOME</a></nav>
+    <div id="nav-3">
+        <button id="hamburger-button">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <ul class="top-level-list">
+          <li>
+            <span class="no-link" tabindex="0">INFO</span>
+            <ul>
+              <li><a href="#">SHOPS</a></li>
+              <li><a href="#">TRAVEL</a></li>
+            </ul>
+          </li>
+          <li><a href="#">LINE-UP</a></li>
+          <li>
+            <span class="no-link" tabindex="0">MORE</span>
+            <ul>
+              <li><a href="#">WORKSHOPS</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <h1>Flex Menu</h1>
+    <p>
+      Here we will follow on from the page describing how to build a <a href="hamburger">hamburger</a> menu. The same HTML will be used here as in that explanation. It would be useful to open that page in a separate browser window so you can see the HTML as you follow this explanation.
+    </p>
+    <p>
+      Here is how the browser renders the HTML for the navigation list without any CSS applied:
+    </p>
+    <div id="nav-0">
+        <button id="hamburger-button">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <ul class="top-level-list">
+          <li>
+            <span class="no-link" tabindex="0">INFO</span>
+            <ul>
+              <li><a href="#">SHOPS</a></li>
+              <li><a href="#">TRAVEL</a></li>
+            </ul>
+          </li>
+          <li><a href="#">LINE-UP</a></li>
+          <li>
+            <span class="no-link" tabindex="0">MORE</span>
+            <ul>
+              <li><a href="#">WORKSHOPS</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <h2><em>display: flex;</em></h2>
+    <p>
+      This HTML was written to enable a hamburger menu on small screens and a horizontal flex menu on larger screens. Here we are making the flex menu and we do not need the hamburger button so we will use <em>nav #hamburger-button {display: none;}</em> so it is not displayed. We will also target the <em>.top-level-list</em> element for <em>display: flex;</em>. The CSS is shown below:
+    <pre><code>
+      <span class="new-code">
+      #nav-1 #hamburger-button {
+        display: none;
+      }
+      #nav-1 .top-level-list {
+        display: flex;
+      }
+      </span>
+    </code></pre>
+    <div id="nav-1">
+        <button id="hamburger-button">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <ul class="top-level-list">
+          <li>
+            <span class="no-link" tabindex="0">INFO</span>
+            <ul>
+              <li><a href="#">SHOPS</a></li>
+              <li><a href="#">TRAVEL</a></li>
+            </ul>
+          </li>
+          <li><a href="#">LINE-UP</a></li>
+          <li>
+            <span class="no-link" tabindex="0">MORE</span>
+            <ul>
+              <li><a href="#">WORKSHOPS</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <p>
+    The button for the hamburger has gone and now the top level list <em>ul</em> element has its <em>display</em> property set to <em>flex</em> and so that list is horizontal. It can be seen that the second level <em>ul</em> elements are still displayed vertically. Later we will hide these and only show them when their parent <em>li</em> element from the top level list receives focus but first lets space the top level list out and deal with vertical alignment.
+    </p>
+    <h2>Spacing and Alignment</h2>
+    <p>
+      For horizontal alignment we will use the flex associated <em>justify-content</em> property and set its value to <em>space-around</em>. We will also use another flex associated property, <em>align-items</em>, to ensure the horizontal list elements are aligned vertically:
+    <pre><code>
+    #nav-2 #hamburger-button {
+      display: none;
+    }
+    #nav-2 .top-level-list {
+      display: flex;<span class="new-code">
+      justify-content: space-around;
+      align-items: center;</span>
+    }
+    </code></pre>
+    <p>
+      So, now our navigation looks like this:
+    </p>
+    <div id="nav-2">
+        <button id="hamburger-button">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <ul class="top-level-list">
+          <li>
+            <span class="no-link" tabindex="0">INFO</span>
+            <ul>
+              <li><a href="#">SHOPS</a></li>
+              <li><a href="#">TRAVEL</a></li>
+            </ul>
+          </li>
+          <li><a href="#">LINE-UP</a></li>
+          <li>
+            <span class="no-link" tabindex="0">MORE</span>
+            <ul>
+              <li><a href="#">WORKSHOPS</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <p>
+      It can be seen that there is more space around the top level list items. Paradoxically the items now seem less aligned vertically but this is because the items with lists in them are being considered as a single item containing a key word (for example INFO) as well as a list and so they are aligned vertically given this consideration. We will later make the second level lists' <em>position</em> properties set to <em>absolute</em> which will take them out of the normal flow of the document and cause the horizontal items to be properly aligned vertically.
+    <h2><em>display: none / block</em></h2>
+    <p>
+      Here we hide the second level lists and redisplay them when the list element they are part of receives focus. In the web page on building a <a href="hamburger">hamburger</a> menu it was explained why <em>:focus-within</em> and not <em>:focus</em> is used and why it is important that it is used on a common parent element of both the element that when clicked causes the dropdown and the dropdown list itself. That is the top level list items. Here is the CSS:
+    <pre><code>
+    #nav-3 #hamburger-button {
+      display: none;
+    }
+    #nav-3 .top-level-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }<span class="new-code">
+    #nav-3 .top-level-list ul {
+      display: none;
+    }
+    #nav-3 .top-level-list li:focus-within ul {
+      display: block;
+    }</span>
+    </code></pre>
+    </p>
+    <div id="nav-3">
+        <button id="hamburger-button">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <ul class="top-level-list">
+          <li>
+            <span class="no-link" tabindex="0">INFO</span>
+            <ul>
+              <li><a href="#">SHOPS</a></li>
+              <li><a href="#">TRAVEL</a></li>
+            </ul>
+          </li>
+          <li><a href="#">LINE-UP</a></li>
+          <li>
+            <span class="no-link" tabindex="0">MORE</span>
+            <ul>
+              <li><a href="#">WORKSHOPS</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <p>
+      Note that when we click on one of the dropdowns and the second level list associated with it is displayed, the alignment of the top level list items changes. This is because the newly displayed second level list is still in normal flow and so now the whole block of content is being aligned with the other single words. We will address this now.
+    </p>
+    <h2>Absolute Position</h2>
+    <p>
+      In order to take the dropdown lists out of normal flow so they don't cause content to be rearranged when they are displayed we make them absolutely positioned.
+    </p>
+    <pre><code>
+    #nav-4 #hamburger-button {
+      display: none;
+    }
+    #nav-4 .top-level-list {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+    #nav-4 .top-level-list ul {
+      display: none;<span class="new-code">
+      position: absolute;
+      background-color: lightgrey;</span>
+    }
+    #nav-4 .top-level-list li:focus-within ul {
+      display: block;
+    }
+    </code></pre>
+    <div id="nav-4">
+        <button id="hamburger-button">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+        <ul class="top-level-list">
+          <li>
+            <span class="no-link" tabindex="0">INFO</span>
+            <ul>
+              <li><a href="#">SHOPS</a></li>
+              <li><a href="#">TRAVEL</a></li>
+            </ul>
+          </li>
+          <li><a href="#">LINE-UP</a></li>
+          <li>
+            <span class="no-link" tabindex="0">MORE</span>
+            <ul>
+              <li><a href="#">WORKSHOPS</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+          </li>
+        </ul>
+    </div>
+    <p>
+      Normally an absolutely positioned element will be positioned relative to the browser window unles one of its parent elements has relative position. In this case our absolutely positioned second level lists seem to be positioned relative to their containing top level list items even though I have not given these relative position. It may be that flex items are relatively positioned or behave, in this respect, as if they were.
+    </p>
+    <h2>Keyboard Tabbing</h2>
+    <p>
+      Some users may by using the tab key on the keyboard for accessing web content.
+  Tabbing with keyboard will only move to elements that can take focus. Anchor elements can take focus by default but our top level list items which are not links but have dropdown lists associated with them do not take focus through keyboard tabbing by default. They can be made to take focus by giving them a <em>tabindex</em> attribute. Assigning a value of 0 to <em>tabindex</em> results in them being focussed in the same order as their appearance in the code with respect to the elements that take focus by default.
+    </p>
+    <p>
+      If the page is refreshed and then the tab key depressed the navigation items should take focus in the order they appear in the HTML. This should mean they are accessible to people using the keyboard to navigate the webpage.
+    </p>
+    <h2>Conclusion</h2>
+    <p>
+      The basic flex navigation is now implemented. A lot more work could be done to enhance the appearance but that would obscure the fundamental requirements of the code and so has not been done here.
+    </p>
+    <p>
+      Precisely the same HTML code was used for this flex layout as the <a href="hamburger.html">hamburger</a> example described separately. In the next explanation we combine the two layouts to create a <a href="responsive.html">responsive</a> layout with the flex CSS code contained in a media query.
+    </p>
+  </div>
+</body>
+</html>

@@ -4,7 +4,7 @@
 </head>
 <body>
   <div class="content">
-    <nav><a href="/code-examples/">HOME</a></nav>
+    <nav><a href="https://stevespages.org.uk/codenotes/codeexamples/">HOME</a></nav>
     <h1>Tree List</h1>
     <h2>Explanation</h2>
     <script>
