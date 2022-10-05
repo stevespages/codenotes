@@ -18,6 +18,7 @@ Working examples can be found at `CodeExamples <https://stevespages.org.uk/coden
    domainnametransfer
    simpleemailservice
    publishtopackagist
+   ssh
 
 
 Indices and tables
