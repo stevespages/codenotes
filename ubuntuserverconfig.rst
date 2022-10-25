@@ -166,6 +166,14 @@ Configuration
 
 # This is interactive and various questions need responses
 
+# In order to obtain one certificate per domain run this command...
+
+# ... then choose just one domain plus any of its subdomains such...
+
+# ... as example.com and www.example.com. Then run this command...
+
+# ... again for other.com and www.other.com. 
+
 ``sudo certbot --apache``
 
 .....................................................................

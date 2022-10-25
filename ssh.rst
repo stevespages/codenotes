@@ -3,7 +3,7 @@ SSH
 
 SSH allows two computers to pass encrypted information to each other over a network which would not be secure if encryption was not used. The encryption used for exchanging the information is symmetric. However, in order to initiate the SSH connection, asymetric encryption is used to authenticate the computers to each other and to exchange the symetric key that will be used for the subsequent encryption of information.  In normal circumstances the administrator of a client or server computer will only need to get involved with the authentication procedure which involves the correct generation and configuration of the asymetric keys (private and public) on the client and server computer.
 
-Generating an asymetric key pair is commonly done with the `ssh-keygen` command. This results in the creation of a one file with the private key in it and another file with the public key in it. The configuration step involves making sure these files are correctly named, have the correct permissions and are in the correct locations on the client and server file systems. There is also a requirement to copy data from the public key file and paste it into another file. This will be explained below.
+Generating an asymetric key pair is commonly done with the `ssh-keygen` command. This results in the creation of a one file with the private key in it and another file with the public key in it. The configuration step involves making sure these files are correctly named, have the correct permissions and are in the correct locations on the client and server file systems. There is also a requirement to copy data from the public key file and paste it into another file. This will be explained below
 
 Symetric Encryption
 -------------------

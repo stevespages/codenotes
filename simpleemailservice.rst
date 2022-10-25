@@ -30,6 +30,8 @@ SES SMTP Credentials
 
 https://docs.aws.amazon.com/ses/latest/dg/send-email-concepts-credentials.html
 
+These consist of a username and password. In my case the username was a 20 char alphanumeric (letters all uppercase) string and the password was a 47 char alphanumeric (letters upper and lower case) string. The same credentials can be used for any verified domain.
+
 You need SMTP credentials for sending an email using the Amazon SMTP interface. SES SMTP credentials are a type of IAM credential. The credentials used are unique to each AWS Region. An IAM user can create SES SMTP credentials if the IAM user's policy gives them permissions to access the following actions:
 
 - iam:ListUsers
@@ -45,7 +47,7 @@ https://docs.aws.amazon.com/ses/latest/dg/smtp-credentials.html
 - From Amazon Console go to Simple Email Service and click on SMTP Settings
 - Click on 'Create SMTP credentials'
 - Enter or accept name of new IAM user and click Create
-- Show the Credentials and save them
+- Show the Credentials and save them eg. in a password manager
 
 Sender Identity
 ---------------
@@ -165,9 +167,12 @@ https://docs.aws.amazon.com/ses/latest/dg/send-email-smtp.html
 Send Emails with PHP via SES SMTP
 ---------------------------------
 
-First install composer into /var/www/html/. To run a composer command type ``php composer.phar`` which is lovely because I quite like typing. You could use ``mv`` to put composer.phar into a directory in your PATH variable either for access by all users or just by a given user. I am going to leave it in the project directory.
-
 https://docs.aws.amazon.com/ses/latest/dg/send-using-smtp-programmatically.html
+
+First install composer into the root of your project eg /var/www/example.com/public_html/ (instructions at https://getcomposer.org/download/). Then to install PHPMailer run ``php composer.phar require phpmailer/phpmailer``. Note that this should be done on the server not your local maching unless you are using that as a server for development purposes.
+
+Now you should be able to send emails progromatically using a script.
+
 
 PHP Script to Send Email
 ------------------------

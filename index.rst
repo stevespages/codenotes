@@ -19,6 +19,8 @@ Working examples can be found at `CodeExamples <https://stevespages.org.uk/coden
    simpleemailservice
    publishtopackagist
    ssh
+   updates
+   es6modules
 
 
 Indices and tables
