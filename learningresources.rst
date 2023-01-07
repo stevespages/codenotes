@@ -9,6 +9,8 @@ CSS
 
 A very good tutorial for dropdowns using CSS without JavaScript is at https://stevespages.org.uk/codenotes/codeexamples/nav/dotted-squirrel/
 
+**CSS Selectors** https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors
+
 Git
 ---
 
@@ -41,6 +43,8 @@ Programming
 
 **Algorithms** by Cormen, Leiserson, Rivest, Stein. A thousand pages and in its 4th edition, a classic.
 
+**Leetcode** https://dev.to/snj/leetcode-problems-for-beginners-5enm
+
 Python
 ------
 
@@ -48,22 +52,37 @@ Python
 
 **Google** Style guide.
 
+R
+-
+
+https://www.r4epi.com
+
 reStructuredText
 ----------------
 
 Abbreviated to reST.
 
-**rst-cheatsheet** at https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst is a useful reference. See https://dev.to/snj/leetcode-problems-for-beginners-5enm
+**rst-cheatsheet** https://github.com/ralsina/rst-cheatsheet/blob/master/rst-cheatsheet.rst is a useful reference.
 
 Sphinx
 ------
+
+http://www1.udel.edu/evelyn/SQL-Class1/oSQLclass1All.html
+
+
 
 **sphinx-doc.org** Eg.https://www.sphinx-doc.org/en/master/usage/quickstart.html
 
 SQL
 ---
 
-Database Design for Mere Mortals by Michael Hernandez is a classic.
+**Database Design for Mere Mortals by Michael Hernandez is a classic.** 
+
+**SQL Queries for Mere Mortals by John L Viescas** This book is OK but has unconvincing file and database naming conventions. It also at least one database example which has a redundant schema and inconsistent data in it.
+
+StanforOnline has some excellent videos on relational algebra and SQL. See: https://www.edx.org/school/stanfordonline Jennifer Widom is an excellent teacher in the videos.
+
+MySQL tutorial: https://www.mysqltutorial.org
 
 SQLite
 ......
@@ -71,6 +90,9 @@ SQLite
 https://www.sqlite.org/
 
 For a good SQLite tutorial, including using the PHP interface, see https://www.sqlitetutorial.net/
+
+https://sqlite.org/cli.html
+
 
 SVG
 ---

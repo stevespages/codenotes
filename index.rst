@@ -6,22 +6,17 @@
 CodeNotes
 =========
 
-Working examples can be found at `CodeExamples <https://stevespages.org.uk/codenotes/codeexamples>`_ . These are useful together with access to the code behind them which is on my `github page <https://github.com/stevespages/codenotes>`_.
-
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
 
-   ubuntuserverconfig
+   serveradmin
    learningresources
    codesnippets
-   domainnametransfer
-   simpleemailservice
-   publishtopackagist
-   ssh
-   updates
-   es6modules
-
+   javascript
+   versioning
+   clonegithubproject
+   android
 
 Indices and tables
 ==================

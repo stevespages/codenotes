@@ -119,7 +119,7 @@ The next example puts the ES6 module ``<script>`` element inside the ``<head>`` 
    let myVar = 43;
    console.log('myVar', myVar);
 
-This situation is equivalent to that shown in figure 3 and like that does not generate an error in the console giving the same output as shown in figure x. Also, no warnings are shown in visual studio code. The previous method is certainly not recommended but is useful to consider.
+This situation is equivalent to that shown in figure 3 and like that does not generate an error in the console giving the same output as shown in figure 4. Also, no warnings are shown in visual studio code. The previous method is certainly not recommended but is useful to consider.
 
 Now we can create another JavaScript file and export a variable from it and import it into `main.js`. We will call the new file `utilities.js` and we will declare a variable called ``utilityVar`` in it. The declaration is followed by the ``export`` statement. Then we use the ``import`` statement inside `main.js` to import ``utilityVar``. Finally, in `main.js` we will ``console.log()`` the ``utilityVar`` and ``myVar`` variables:
 
@@ -208,7 +208,15 @@ When we run `index.html` in a browser the output to the developer tools console 
 
 This shows that we can have the same variable name with different values because they are in different module scopes and one is in global scope. We can also see that the `utilities.js` file declares and assigns two different variables (``utilityVar`` and ``myVar``) which end up in different module scopes because one of the variables is imported into `main.js` and the other into `main2.js`. These two files are the entry points for two different ES6 module ``<script>`` elements and hence go into separate scopes. The `utilities.js` file is considered to be a module but its contents can contribute to more than one module scope.
 
-I would like to stress that this is not a guide to how ES6 modules should be used but it is an effort to try and illustrate how they behave which should make it easier to use them effectively.
+`main.js`
+---------
+
+It is not possible use the ``import`` statement inside the content of a ``script`` element in an HTML document. Therefore, even though we have seen that code inside a ``script`` element can have module scope, it is very limited. In practice ES6 modules involve a JavaScript file used referenced by the ``src`` attribute of a ``script`` element. This file must have code in it that will be run once it has been downloaded by the browser otherwise the JavaScript in the file could not be used. That code could be defined within the file or, usefully, it could be code it has imported from other modules which of course are other JavaScript files. This file, which is often called `main.js`, has a coordinating role in that it imports code from other modules and then determines how that code will be invoked. It is the entry point for the modules that contribute to the HTML file it is referenced by. This `main.js` file determines what will be in the module scope created by the ``script`` element that references it.
+
+Summary
+-------
+
+I would like to stress that this is not a guide to how ES6 modules should be used but it is an effort to try and illustrate how they behave which should make it easier to use them effectively. There is a section in the page on `asynchronous code <./asynchronous.html>`_ showing how to use asynchronous code in conjunction with ES6 modules.
 
 Further Reading
 ---------------
